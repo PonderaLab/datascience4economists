@@ -22,14 +22,17 @@ Here are some steps through the process of [signing up for GitHub](https://githu
 
 ## Getting started
 
-Though often used synonymously, Git and GitHub are two different things. Git is a particular implementation of version control originally designed by Linus Torvalds as a way of managing the Linux source code. Other systems of version control exist though they are used less frequently. Git can be used to refer both to a particular approach taken to version control and the software underlying it.
+Though often used synonymously, its important to note that Git and GitHub are two different things. Git is a particular implementation of version control originally designed by Linus Torvalds as a way of managing the Linux source code. Other systems of version control exist though they are used less frequently. Git can be used to refer both to a particular approach taken to version control and the software underlying it.
 
-Given that, how are we going to interact in Github?. Typically, the interactions are given by committing/pulling/pushing/branching/actually working with the code from a repository. In this course, interaction activities are limited to the use of *pulling*. It is very, very useful to read the [github glossary](https://help.github.com/articles/github-glossary/) to assimilate the specific terms we use across our site and documentation.
-
-So, for pulling, we suggest to [install GitHub Desktop](https://desktop.github.com/) on supported Microsoft Windows or OS X operating systems. More techincal information about Github Desktop can ben founded [here](https://services.github.com/on-demand/github-desktop/pull-request-github-desktop).
+Given that difference, how are we going to interact in Github?. Typically, the interactions are given by committing/pulling/pushing/branching/actually working with the code from a repository. In this course, interaction activities are limited to the use of *pulling* the repository. It is very, very useful to read the [github glossary](https://help.github.com/articles/github-glossary/) to assimilate the specific terms we use across our site and documentation. More details for pulling the repository are given in the next section.
 
 
 ## Installation
+
+So, for pulling, we suggest to [install GitHub Desktop](https://desktop.github.com/) on supported Microsoft Windows or OS X operating systems. More techincal information about Github Desktop can ben founded [here](https://services.github.com/on-demand/github-desktop/pull-request-github-desktop).
+
+After you’ve created a Github account and install Github Desktop,the next step is to clone it to your local environment.
+Here we have a nice picture of how to clone our repository (in Github Desktop clearly) -> [Cloning](https://services.github.com/on-demand/images/gifs/github-desktop/clone-repository-locally.gif)
 
 ## Usage
 
