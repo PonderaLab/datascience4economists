@@ -1,15 +1,16 @@
-# Datascience4economists 
+# Datascience4economists
 
-Firt of all, welcome to the repository of the class ECO-10506 Econometrics and Data Science.
+First of all, welcome to the repository of the class ECO-10506 Econometrics and Data Science.
+We'll use this __hub__ for sharing code and some notes with you. 
 
 ## What is Github?
 
 GitHub is an online; browser based distributed version control system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users.
 
- 
-This repository is *constantly updated*, so we suggest visiting it at least once a week. 
 
-Before we start, you must already have a GitHub or GitHub Enterprise account. If you already have it, ignore this message, otherwise open it [here](https://github.com/join).  
+This repository is *constantly updated*, so we suggest visiting it at least once a week.
+
+Before we start, you must already have a GitHub or GitHub Enterprise account. If you already have it, ignore this message, otherwise open it [here](https://github.com/join).
 
 Here are some steps through the process of [signing up for GitHub](https://github.com/join).:
 >S1: Go to Github sign in page. Then enter a username, valid email address, and password.Use at least one lowercase letter, one numeral, and seven characters.
@@ -37,6 +38,3 @@ Here we have a nice picture of how to clone our repository (in Github Desktop cl
 ## Usage
 
 ## How we want to work
-
-  
-
