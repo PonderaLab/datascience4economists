@@ -2,12 +2,14 @@
 
 Firt of all, welcome to the repository of the class ECO-10506 Econometrics and Data Science.
 
+![alt text](https://enterprise.github.com/assets/home/integrations-graphic-751d7041ec159aad4acdf01d30a0685a6be2cf2b76eb2390d69f90e4ff5c67a7.svg)
+
 ## What is Github?
 
 GitHub is an online; browser based distributed version control system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users.
 
  
-This repository is *constantly updated*, so we suggest visiting it at least once a week. 
+This repository is **constantly updated**, so we suggest visiting it at least once a week. 
 
 Before we start, you must already have a GitHub or GitHub Enterprise account. If you already have it, ignore this message, otherwise open it [here](https://github.com/join).  
 
@@ -20,7 +22,7 @@ Here are some steps through the process of [signing up for GitHub](https://githu
 >
 >S4: Tailor experience: Waste of time..., you can skip it and we concluded.
 
-## Getting started
+## Getting started :dizzy:
 
 Though often used synonymously, its important to note that Git and GitHub are two different things. Git is a particular implementation of version control originally designed by Linus Torvalds as a way of managing the Linux source code. Other systems of version control exist though they are used less frequently. Git can be used to refer both to a particular approach taken to version control and the software underlying it.
 
@@ -36,7 +38,8 @@ Here we have a nice picture of how to clone our repository (in Github Desktop cl
 
 ## Usage
 
-## How we want to work
+
+## How we want to work :point_up:
 
   
 
