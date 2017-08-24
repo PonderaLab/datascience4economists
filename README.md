@@ -1,6 +1,6 @@
 # Datascience4economists 
 
-Firt of all, welcome to the repository of the class ECO-10506 Econometrics and Data Science.
+First of all, welcome to the repository of the class ECO-10506 Econometrics and Data Science.
 
 ![alt text](https://enterprise.github.com/assets/home/integrations-graphic-751d7041ec159aad4acdf01d30a0685a6be2cf2b76eb2390d69f90e4ff5c67a7.svg)
 
