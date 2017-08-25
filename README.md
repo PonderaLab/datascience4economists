@@ -7,7 +7,7 @@ We'll use this __hub__ for sharing code and some notes with you.
 
 ## What is Github?
 
-GitHub is an online; browser based distributed [version control](https://en.wikipedia.org/wiki/Version_control) system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users. 
+GitHub is an online; browser based distributed [version control](https://en.wikipedia.org/wiki/Version_control) system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users.
 
 This repository is **constantly updated**, so we suggest visiting it at least once a week.
 
@@ -55,9 +55,9 @@ Windows and Mac users most likely want one of these versions of R:
 
 #### Installing Python 2.7:
 
-Depending on you Operating System, choose some of this [versions](https://www.python.org/downloads/release/python-2710/)
+Depending on you Operating System, choose some of this [versions](https://www.python.org/downloads/release/python-2710/).
 
-**And finally**
+*__... and finally__*
 
 #### Anaconda!!:
 
@@ -68,8 +68,3 @@ So, to download Anaconda, you just to enter in [Anaconda Distribution] (https://
 Happy coding!!
 
 ![alt text](https://i.pinimg.com/736x/2a/3b/6b/2a3b6bf153b1999994f1bdaa70853b16--star-wars-comics-war-comics.jpg)
-
-
-
-
-
