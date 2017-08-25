@@ -40,6 +40,8 @@ Here we have a nice picture of how to clone our repository (in Github Desktop cl
 
 As well described in the Syllabus, this course will make use of **Python 2.7 and R.**
 
+In order to make it dynamic, we'll use the famous [Jupyter Notebooks](https://jupyter.org/). Please install it following the instructions [here](). Some times we'll also like to use this [web versions](https://nbviewer.jupyter.org/) of the notebooks.
+
 ### Download and Install R
 
 
