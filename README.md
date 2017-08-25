@@ -34,7 +34,8 @@ Given that difference, how are we going to interact in Github?. Typically, the i
 So, for pulling, we suggest to [install GitHub Desktop](https://desktop.github.com/), supported Microsoft Windows or OS X operating systems. More techincal information about Github Desktop can ben founded [here](https://services.github.com/on-demand/github-desktop/pull-request-github-desktop).
 
 After you've created a Github account and install Github Desktop,the next step is to __clone it__ to your local environment.
-Here we have a nice picture of how to clone our repository (in Github Desktop clearly) -> [Cloning](https://services.github.com/on-demand/images/gifs/github-desktop/clone-repository-locally.gif)
+Here we have a nice picture of how to clone our repository (in Github Desktop clearly) -> [Cloning](https://services.github.com/on-demand/images/gifs/github-desktop/clone-repository-locally.gif).
+Follow [this instructions](https://help.github.com/articles/connecting-to-github-with-ssh/) for cloning it through SSH (our recommended way, please do it this way).
 
 ## Usage
 
@@ -42,7 +43,7 @@ As well described in the Syllabus, this course will make use of **Python 2.7 and
 
 In order to make it dynamic, we'll use the famous [Jupyter Notebooks](https://jupyter.org/). Please install it following the instructions [here](). Some times we'll also like to use this [web versions](https://nbviewer.jupyter.org/) of the notebooks.
 
-### Download and Install R
+### Download and Install R & Python
 
 
 #### Installing R:
@@ -61,7 +62,7 @@ Depending on you Operating System, choose some of this [versions](https://www.py
 
 *__... and finally__*
 
-#### Anaconda!!:
+#### Anaconda!!!:
 
 However, to ensure that everyone can use the packages in a friendly way, we suggest downloading Ananconda, which includes Python 2.7 (via Jupiter Notebook) as well as R (via R-Studio). Most of the files we will be sharing will be adapted for Anaconda.
 
