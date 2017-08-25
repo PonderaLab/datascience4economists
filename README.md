@@ -64,9 +64,11 @@ Depending on you Operating System, choose some of this [versions](https://www.py
 
 However, to ensure that everyone can use the packages in a friendly way, we suggest downloading Ananconda, which includes Python 2.7 (via Jupiter Notebook) as well as R (via R-Studio). Most of the files we will be sharing will be adapted for Anaconda.
 
-So, to download Anaconda, you just to enter in [Anaconda Distribution] (https://www.continuum.io/downloads), choose you preferred plataform and Download the Python 2.7 version.
+So, to download Anaconda, you just to enter in [Anaconda Distribution] (https://www.continuum.io/downloads) ,choose you preferred plataform and download the Python 2.7 version.
 
 Happy coding!!
+
+![alt text](https://i.pinimg.com/736x/2a/3b/6b/2a3b6bf153b1999994f1bdaa70853b16--star-wars-comics-war-comics.jpg)
 
 
 
