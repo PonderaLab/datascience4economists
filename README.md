@@ -7,8 +7,7 @@ We'll use this __hub__ for sharing code and some notes with you.
 
 ## What is Github?
 
-GitHub is an online; browser based distributed [version control](https://en.wikipedia.org/wiki/Version_control) system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users.
-
+GitHub is an online; browser based distributed [version control](https://en.wikipedia.org/wiki/Version_control) system for software developers using the Git revision control system. The service provides free public repositories, issue tracking, graphs, code review, downloads, wikis and collaborator management. There are also social networking elements of the service including feeds and the ability to follow other users. 
 
 This repository is **constantly updated**, so we suggest visiting it at least once a week.
 
@@ -34,10 +33,43 @@ Given that difference, how are we going to interact in Github?. Typically, the i
 
 So, for pulling, we suggest to [install GitHub Desktop](https://desktop.github.com/), supported Microsoft Windows or OS X operating systems. More techincal information about Github Desktop can ben founded [here](https://services.github.com/on-demand/github-desktop/pull-request-github-desktop).
 
-After you’ve created a Github account and install Github Desktop,the next step is to __clone it__ to your local environment.
+After you've created a Github account and install Github Desktop,the next step is to __clone it__ to your local environment.
 Here we have a nice picture of how to clone our repository (in Github Desktop clearly) -> [Cloning](https://services.github.com/on-demand/images/gifs/github-desktop/clone-repository-locally.gif)
 
 ## Usage
 
+As well described in the Syllabus, this course will make use of **Python 2.7 and R.**
 
-## How we want to work :point_up:
+### Download and Install R
+
+
+#### Installing R:
+
+Windows and Mac users most likely want one of these versions of R:
+
+> [Linux](https://cran.itam.mx/bin/linux/)
+
+> [OS X](https://cran.itam.mx/bin/macosx/)
+
+> [Windows](https://cran.itam.mx/bin/windows/)
+
+#### Installing Python 2.7:
+
+Depending on you Operating System, choose some of this [versions](https://www.python.org/downloads/release/python-2710/)
+
+**And finally**
+
+#### Anaconda!!:
+
+However, to ensure that everyone can use the packages in a friendly way, we suggest downloading Ananconda, which includes Python 2.7 (via Jupiter Notebook) as well as R (via R-Studio). Most of the files we will be sharing will be adapted for Anaconda.
+
+So, to download Anaconda, you just to enter in [Anaconda Distribution] (https://www.continuum.io/downloads) ,choose you preferred plataform and download the Python 2.7 version.
+
+Happy coding!!
+
+![alt text](https://i.pinimg.com/736x/2a/3b/6b/2a3b6bf153b1999994f1bdaa70853b16--star-wars-comics-war-comics.jpg)
+
+
+
+
+
