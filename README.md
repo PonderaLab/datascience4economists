@@ -39,8 +39,36 @@ Here we have a nice picture of how to clone our repository (in Github Desktop cl
 
 ## Usage
 
+As well described in the Syllabus, this course will make use of **Python 2.7 and R.**
 
-## How we want to work :point_up:
+### Download and Install R
 
-  
+
+#### Installing R:
+
+Windows and Mac users most likely want one of these versions of R:
+
+> [Linux](https://cran.itam.mx/bin/linux/)
+
+> [OS X](https://cran.itam.mx/bin/macosx/)
+
+> [Windows](https://cran.itam.mx/bin/windows/)
+
+#### Installing Python 2.7:
+
+Depending on you Operating System, choose some of this [versions](https://www.python.org/downloads/release/python-2710/)
+
+**And finally**
+
+#### Anaconda!!:
+
+However, to ensure that everyone can use the packages in a friendly way, we suggest downloading Ananconda, which includes Python 2.7 (via Jupiter Notebook) as well as R (via R-Studio). Most of the files we will be sharing will be adapted for Anaconda.
+
+So, to download Anaconda, you just to enter in [Anaconda Distribution] (https://www.continuum.io/downloads), choose you preferred plataform and Download the Python 2.7 version.
+
+Happy coding!!
+
+
+
+
 
