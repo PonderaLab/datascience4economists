@@ -1,104 +1,149 @@
-# Simple and Linear Regressions
+#Token_inegi API=> llamado a ciertas bibliotecas.
+http://www3.inegi.org.mx/sistemas/api/denue/v1/tokenVerify.aspx
 
-## The data we'll use
+Token: 0201002c-76de-4d09-a2a0-9c7f3cb88b59-
 
-Having __pull / clone__ this proyect, you could find the data on your data folder. Please go to the [original source](https://www.gov.uk/government/statistics/graduate-outcomes-for-all-subjects-by-university) for more information. Open RStudio.
+Not working...
+
 
 ## R
 
-Reading the database:
+1) Reading the database:
 
 ```r
 data <- read.csv("../sfr18_2017.csv", header=TRUE, sep=",")
 ```
 
-Review variables:
-
-```r
-names(data)
-```
-
-List of variable names and their description:
-
-__UKPRN__ UK Provider Reference Number.
-
-__subject__ Subject studied.
-
-__sex__ Sex of graduate.
-
-__yearsAfterGraduation__		Number of years after graduation.
-
-__grads__				Number of graduates included in calculations.
-
-__unmatched__			Percentage of graduates that have been classed as unmatched.
-
-__matched__				Number of graduates that have been classed as matched.
-
-__activityNotCaptured__		Percentage of matched graduates whose activity could not be captured.
-
-__noSustDest__			Percentage of matched graduates with an unsustained destination.
-
-__sustEmpOnly__			Percentage of graduates with a record or sustained employment only.
-
-__sustEmp__				Percentage of graduates with a record or sustained employment (these graduates may or may not have a further study record in addition to a sustained employment record).
-
-__sustEmpFSorBoth__			Percentage of graduates with a record or sustained employment, a record of further study, or both.
-
-__earningsInclude__			Number of matched graduates included in earnings calculations.
-
-__lowerAnnEarn__			Annualised earnings lower quartile.
-
-__medianAnnEarn__			Median annualised earnings.
-
-__upperAnnEarn__			Annualised earnings upper quartile.
-
-__POLARGrpOne__			Percentage of graduates in POLAR group 1 (of those eligible to be included in POLAR calculations).
-
-__POLARGrpOneIncluded__		Percentage of graduates included in POLAR calculations.
-
-__prAttBand__			Prior attainment band.
-
-__prAttIncluded__			Percentage of graduates included in prior attainment calculations.
+alternativamente:
+> library(readr)
+> sfr18_2017 <- read_csv("~/Desktop/github/datascience4economists/data/sfr18_2017.csv")
 
 
-### Plotting regressions
+1.1) Data for practice2
 
+install.packages("AER")
 
-```r
-attach(data)
-plot(var1, var2)
-abline(lm(y ~ x1))      #  y es la variable exógena, x1 es la variable endógena.
-title("Regression")
-detach(data)
-```
+library(AER)
+
+data("CASchools")
+
+names(CASchools)
+
+head(CASchools)
+
 ----------------------------------------------------------------------------------------
 
-Rename variables:
+2) Review variables:
 
-The `plyr` package has a `rename()` function that’s useful for altering the
-names of variables. The `plyr` package isn’t installed by default, so you’ll need to install it on first use using the `install.packages("plyr")` command.
 
-The format of the `rename()` function is `rename(dataframe, c(oldname="newname", oldname="newname",...))`
+2.1) CASchools vars:
 
-Here’s an example with the leadership data:
+district: character. District code.
 
-```r
+school: character. School name.
+
+county:factor indicating county.
+
+grades: factor indicating grade span of district.
+
+students: Total enrollment.
+
+teachers: Number of teachers.
+
+calworks: Percent qualifying for CalWorks (income assistance).
+
+lunch: Percent qualifying for reduced-price lunch.
+
+computer: Number of computers.
+
+expenditure: Expenditure per student.
+
+income: District average income (in USD 1,000).
+
+english: Percent of English learners.
+
+read: Average reading score.
+
+math: Average math score.
+
+
+
+2.2) CASchools renaming vars:
+
+install.packages("plyr")
+
 library(plyr)
-data <- rename(data, c(oldname="newname"...))
-```
 
-Subseting data:
+df <- rename(CASchools, c(students="total_students", county="region", calworks="pub_assist", lunch="perc_lunch", computer="num_computers", expenditure="exp_perstud", income="income_av", english="perc_english", read="read_average", math="math_average"))
+
+head(df)
+
+
+2.3) Creating variables:
+
+df$stratio <- with(df, total_students/teachers)
+df$score <- with(df, (math_average + read_average)/2)
+df$income_av2 <-with(df, (income_av)*1000)
+
+
+2.4) Dummies:
+
+df$dum[df$grades == 'KK-08'] <- 1
+df$dum[df$grades == 'KK-06'] <- 0
+
+
+2.5) Interactions:
+
+df$int_exp_comp <- df$dum*df$pub_assist
+
+----------------------------------------------------------------------------------------
+
+3) Correlation
+
+cor.test(df$total_students, df$income_av2, method=c("pearson", "kendall", "spearman"))
+
+
+cor.test(df$total_students, df$income_av2, method=c("kendall"))
+
+Pearson: If the p-value is < 5%, then the correlation between x and y is significant.
+
+4) Shapiro-Wilk normality test:
+
+shapiro.test(df$income_av2) 
+
+shapiro.test(df$math_average) 
+
+output >= 0.05 we can assume normality
+
+
+
+----------------------------------------------------------------------------------------
+
+4) Subseting data for correlation matrix:
 
 The `subset()` function is probably the easiest way to select variables and observations. Here are two examples:
 
 ```
 newdata <- subset(leadership, age >= 35 | age < 24, select = c(q1, q2, q3, q4))                       #  q1, q2... son column names
 ```
+
+
+ or alternative:
+
+df_subset <- subset(df, select = c(int_dum_pubassist, stratio, dum, num_computers, perc_lunch, math_average, read_average,pub_assist))
+
 ----------------------------------------------------------------------------------------
 
-### Regression!!!!!
+5) Correlation Matrix:
 
-`-` Separates response variables on the left from the explanatory variables on the right. For
+cor(df_subset)
+plot(df$read_average,df$math_average)
+
+----------------------------------------------------------------------------------------
+
+### Regression details!!!
+
+`~` Separates response variables on the left from the explanatory variables on the right. For
 example, a prediction of y from x, z, and w would be coded y ~ x + z + w.
 
 `+` Separates predictor variables.
@@ -126,37 +171,38 @@ function Mathematical functions can be used in formulas. For example, log(y) ~ x
 would predict log(y) from x, z, and w.
 
 ----------------------------------------------------------------------------------------
-
-### Examples!!!:
-
-
-----------------------------------------------------------------------------------------
-
-Correlation Matrix:
-
-cor(df)
-----------------------------------------------------------------------------------------
+### Plotting regressions (optional)
 
 
-Multiple linear regression
-
-
-> states <- as.data.frame(state.x77[,c("Murder", "Population",
-"Illiteracy", "Income", "Frost")])
-
-> fit <- lm(Murder ~ Population + Illiteracy + Income + Frost,
-data=states)
-
-> summary(fit)
+```r
+attach(data)
+plot(var1, var2)
+abline(lm(y ~ x1))      #  y es la variable exógena, x1 es la variable endógena.
+title("Regression")
+detach(data)
+```
 
 
 ----------------------------------------------------------------------------------------
 
-Multiple linear regression with interactions
 
-> fit <- lm(mpg ~ hp + wt + hp:wt, data=mtcars)
+6) Multiple linear regression
 
-> summary(fit)
+
+fit <- lm(math_average ~ num_computers + perc_lunch + stratio ,
+data=df_subset)
+
+summary(fit)
+
+
+----------------------------------------------------------------------------------------
+
+7) Multiple linear regression with interactions
+
+fit <- lm(math_average ~ num_computers + perc_lunch + stratio + int_dum_pubassist  ,
+data=df_subset)
+
+summary(fit)
 
 
 You can see from the Pr(>|t|) column that the interaction between horsepower and
@@ -166,9 +212,9 @@ response variable depends on the level of the other predictor
 
 ----------------------------------------------------------------------------------------
 
-Confident intervals
+8) Confident intervals
 
-> confint (df)
+> confint (fit)
 
 95% confident that the interval...
 
@@ -177,7 +223,7 @@ Confident intervals
 
 ----------------------------------------------------------------------------------------
 
-GLM
+9) GLM
 
 Syntax:
 
@@ -206,7 +252,7 @@ residuals(model, type= "deviance"))
 
 ----------------------------------------------------------------------------------------
 
-Logistic
+10) Logistic
 
 Dicotomic vars:
 > Affairs$ynaffair[Affairs$affairs > 0] <- 1
