@@ -1,9 +1,3 @@
-#Token_inegi API=> llamado a ciertas bibliotecas.
-http://www3.inegi.org.mx/sistemas/api/denue/v1/tokenVerify.aspx
-
-Token: 0201002c-76de-4d09-a2a0-9c7f3cb88b59-
-
-Not working...
 
 
 ## R
@@ -225,9 +219,23 @@ response variable depends on the level of the other predictor
 
 9) GLM
 
+binomial        (link = "logit")
+gaussian        (link = "identity")
+gamma           (link = "inverse")
+inverse.gaussian (link = "1/mu^2")
+poisson          (link = "log")
+quasi            (link = "identity", variance = "constant")
+quasibinomial    (link = "logit")
+quasipoisson     (link = "log")
+
+fit <- lm(math_average ~ num_computers + perc_lunch + stratio ,
+data=df_subset)
+
+summary(fit)
+
 Syntax:
 
-glm(Y~X1+X2+X3, family=gaussian(link="identity"), data=mydata)
+glm(math_average ~ num_computers + perc_lunch + stratio, family=gaussian(link="identity"), data=df_subset)
 
 
 Functions that support glm():
@@ -242,7 +250,7 @@ residuals()
 
 anova()
 
-predict()     --> Cross validation!, uses fitter model to predict response values for a         new dataset
+predict()     --> Cross validation!!!!, uses fitter model to predict response values for a         new dataset
 
 
 A common  diagnostic:
