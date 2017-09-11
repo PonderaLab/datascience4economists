@@ -83,7 +83,7 @@ df$income_av2 <-with(df, (income_av)*1000)
 2.4) Dummies:
 
 df$dum[df$grades == 'KK-08'] <- 1
-df$dum[df$grades == 'KK-06'] <- 0
+df$dum[df$grades != 'KK-08'] <- 0
 
 
 2.5) Interactions:
@@ -100,6 +100,8 @@ cor.test(df$total_students, df$income_av2, method=c("pearson", "kendall", "spear
 cor.test(df$total_students, df$income_av2, method=c("kendall"))
 
 Pearson: If the p-value is < 5%, then the correlation between x and y is significant.
+
+----------------------------------------------------------------------------------------
 
 4) Shapiro-Wilk normality test:
 
@@ -124,7 +126,7 @@ newdata <- subset(leadership, age >= 35 | age < 24, select = c(q1, q2, q3, q4)) 
 
  or alternative:
 
-df_subset <- subset(df, select = c(int_dum_pubassist, stratio, dum, num_computers, perc_lunch, math_average, read_average,pub_assist))
+df_subset <- subset(df, select = c(int_exp_comp, stratio, dum, num_computers, perc_lunch, math_average, read_average,pub_assist))
 
 ----------------------------------------------------------------------------------------
 
@@ -193,7 +195,7 @@ summary(fit)
 
 7) Multiple linear regression with interactions
 
-fit <- lm(math_average ~ num_computers + perc_lunch + stratio + int_dum_pubassist  ,
+fit <- lm(math_average ~ num_computers + perc_lunch + stratio + int_exp_comp  ,
 data=df_subset)
 
 summary(fit)
@@ -255,8 +257,8 @@ predict()     --> Cross validation!!!!, uses fitter model to predict response va
 
 A common  diagnostic:
 
-plot(predict(model, type="response"),
-residuals(model, type= "deviance"))
+plot(predict(fit, type="response"),
+residuals(fit, type= "deviance"))
 
 ----------------------------------------------------------------------------------------
 
