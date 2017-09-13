@@ -1,0 +1,116 @@
+
+1.1) Datos
+
+El dataframe contiene 121 observaciones para 10 variables.
+
+Las variables son:
+
+oil factor.                        Is the country an oil-producing country?
+
+inter factor.                      Does the country have better quality data?
+
+oecd factor.                       Is the country a member of the OECD?
+
+gdp60 Per capita                   GDP in 1960.
+
+gdp85 Per capita                   GDP in 1985.
+
+gdpgrowth                          Average growth rate of per capita GDP from 1960 to 1985 (in percent).
+popgrowth                          Average growth rate of working-age population 1960 to 1985 (in percent).
+invest                             Average ratio of investment (including Government          Investment) to GDP from 1960 to 1985 (in percent).
+
+school                             Average fraction of working-age population enrolled in secondary school from 1960 to 1985 (in percent).
+
+literacy60                         Fraction of the population over 15 years old that is able to read and write in 1960 (in percent).
+
+Detalles:
+Los datos fueron obtenidos de Penn World Table 4.0 y fueron otorgados por Mankiw, Romer y Weil (1992), con excepción de literacy60 que fue obtenido del World Bank’s World Development Report.
+
+-----------------------------------------------------------------------------------------------
+
+1.2) Instalar en R-studio el paquete AER (Applied Econometrics with R) y cargar el dataframe "GrowthDJ", el cual se encuentra en la paquetería AER.
+
+-----------------------------------------------------------------------------------------------
+
+2.0) Renombrar variables. Cambiar el nombre de las siguientes variables y renombrar a este nuevo dataframe como "growth_data" :
+
+-oil  por oil_producer                      
+
+-inter  por data_factor                 
+
+-oecd  por oecd_member                     
+            
+-gdpgrowth  por gdpgrowth_av                   
+
+-popgrowth  por popgrowth_av                     
+
+-invest   por invest_av                          
+
+-school   por school_av  
+
+-----------------------------------------------------------------------------------------------
+
+2.1) Creando variables.
+
+a) Utiliza la librería de R "dummies" para convertir en dummies las variables dicotómicas que tiene el dataframe "growth_data".
+
+b) Crea la interacción entre  gdp60 y los países productores de petróleo. Esta nueva variable tendrá por nombre: interact_gdp60_oilfactor 
+
+
+-----------------------------------------------------------------------------------------------
+
+2.2) Matriz de correlaciones.
+
+a) Con el dataframe del inciso anterior, crea un nuevo dataframe (se sugiere utilizar la función subset) que contenga únicamente las siguientes variables:
+gdp60, gdp85, popgrowth_av, invest_av, school_av, literacy60.
+
+b) Construye una matriz de correlaciones con el dataframe del inciso a). Considera que esta matriz debe contener únicamente variables numéricas y no debe tener campos con NA. Para ello debes usar en la función de correlaciones la instrucción: use="pairwise.complete.obs"
+
+c) Reporta los resultados del inciso b). 
+
+d) Utiliza una regresión lineal múltiple para estimar la relación entre gdpgrowth_av como variable exógena y gdp60, popgrowth_av y invest_av como variables endógenas. ¿Qué relación encuentras entre estas variables y la matriz de correlaciones?. Interpreta los resultados.
+
+e) Supón que quieres explorar la relación entre gdpgrowth_av y educación. Para ello eliges incluir la variable school_av en la regresión del inciso anterior. Corre la regresión. Interpreta los resultados.
+
+f) ¿Incluirías la variable school_av en la regresión?. En caso afirmativo, especifica el modelo que correrías. En caso contrario, ¿qué variable sustituirías?
+
+h) Analiza las R^2 del inciso e y f. Contrástalas. ¿Con cuál te quedas?. ¿Cuál regresión explica más la variabilidad?.
+
+-----------------------------------------------------------------------------------------------
+
+2.3) Variable dummy e interacciones.
+
+a) Utiliza la regresión que elegiste en el inciso f) del punto anterior agregando la variable dummy de oil_factor para los países que producen petróleo. Utiliza la dummy de oil_factor para los no productores como variable exlcluida. Interepreta los resultados.
+
+b) Adicionalmente al punto anterior, agrega la variable de interacción que creaste en 2.1.b e interpreta el resultado. ¿Cómo afecta el incorporar estas variables a los demás coeficientes de la regresión?.
+
+-----------------------------------------------------------------------------------------------
+
+2.4) Gráfica.
+
+a) Genera una gráfica que incorporte la variable GDP60 en un eje y la variable dummy oil_factor en el otro eje. (Nota que la variable dummy debe separarse en dos grupos, productores y no productores de petróleo.)
+
+
+-----------------------------------------------------------------------------------------------
+
+3.0) Relaciones lineales.
+
+a) ¿Cómo identificarían si la variable school_av tiene una realación lineal o no?.
+
+b) Construye la variable school_av^2 e incorpórala a la regresión que usaste en 2.3.b. Interpreta los resultados.
+
+
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
