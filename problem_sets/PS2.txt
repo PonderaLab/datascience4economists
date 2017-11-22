@@ -1,0 +1,61 @@
+# R exercises for the course: Data science for economists
+
+## 1. Exercise on your own
+
+Load the dataset __`Seatbelts`__ as part of the datasets package via `data(Seatbelts)`. Use `as.data.frame` to convert the object to a dataframe. Fit a linear model of driver deaths with `kms` and `PetrolPrice` as predictors. Interpret your results.
+
+Predict the number of driver deaths at the average `kms` and `petrol` levels.
+
+Take the residual for `DriversKilled` having regressed out `kms` and an intercept and the residual for `PetrolPrice` having regressed out `kms` and an intercept. Fit a regression through the origin of the two residuals and show that it is the same as your coefficient obtained in question 1.
+
+Take the residual for `DriversKilled` having regressed out `PetrolPrice` and an intercept. Take the residual for `kms` having regressed out `PetrolPrice` and an intercept. Fit a regression through the origin of the two residuals and show that it is the same as your coefficient obtained in question 1.
+
+Repeat question 1 for the outcome being the log of the count of driver deaths. Interpret your coefficients.
+
+Refer to question 1. Add the dummy variable `law` and interpret the results. Repeat this question with a factor variable that you create called `lawFactor` that takes the levels `No` and `Yes`. Change the reference level from `No` to `Yes`
+
+Here is a code to show a plot of Driver Fatalities by month. Change it accordingly and make it run:
+
+```r
+# Create a plot that shows seasonality of accidents as well as effect of law
+driver.plot <- ggplot(seatbelts.data, aes(year, DriversKilled,
++ colour=law)) + geom_line() + xlab("Year") + ylab("Drivers
++ Killed") + facet_wrap(~month, ncol=6)
+driver.plot <- driver.plot + opts(title="Drivers Fatalities in U.K.
++ by Month from 1969-1984")
+```
+
+
+## 2. For the next exercise you'll need the following libraries:
+
+```r
+library(NbClust)
+library(readr)
+library(cluster)
+library(factoextra)
+library(RColorBrewer)
+```
+
+2.1. Use R-Studio to read `wine.csv`, a file containing some characteristics of some wines.
+
+
+2.2 Standardize data and convert them to a dataframe.
+
+
+2.3. Optimizing the number of clusters: use the `NbClust` library. [Here](https://cran.r-project.org/web/packages/NbClust/NbClust.pdf) you'll find some details and documentation of the library.
+
+Use the function `NbClust` with _min num clusters = 2_, _max num cluster = 15_, Euclidean distance and `kmeans`. Repeat the exercise with the Manhattan distance. Report the differences.
+
+2.4. Use with the dataframe on __2.2__ and find the number of clusters.
+
+2.5. Calculate the mean of every variable for each cluster. _Tip: you can use something like the next line._
+
+`aggregate(df[-1], by=list(cluster=fit$cluster), mean)`
+
+If you were to choose 3 wine characteristics (variables) in order to differentiate them, which one would you use?
+
+2.6. Use the `fviz_cluster` function to visualize the clusters. Report a plot with them.
+
+2.7. Include labels of the `kmeans` on the original dataframe. _Tip: Use `cbind`_
+
+2.8. Use a lineal regression with clusters as endogenous variables and all the others exogenous. What variables are statistically significant?
