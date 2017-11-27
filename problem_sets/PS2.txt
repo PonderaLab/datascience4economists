@@ -18,11 +18,8 @@ Here is a code to show a plot of Driver Fatalities by month. Change it according
 
 ```r
 # Create a plot that shows seasonality of accidents as well as effect of law
-driver.plot <- ggplot(seatbelts.data, aes(year, DriversKilled,
-+ colour=law)) + geom_line() + xlab("Year") + ylab("Drivers
-+ Killed") + facet_wrap(~month, ncol=6)
-driver.plot <- driver.plot + opts(title="Drivers Fatalities in U.K.
-+ by Month from 1969-1984")
+driver.plot <- ggplot(seatbelts.data, aes(year, DriversKilled, colour=law)) + geom_line() + xlab("Year") + ylab("Drivers Killed") + facet_wrap(~month, ncol=6)
+driver.plot <- driver.plot + labs(title="Drivers Fatalities in U.K. by Month from 1969-1984")
 ```
 
 
